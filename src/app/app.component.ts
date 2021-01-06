@@ -1,6 +1,4 @@
-
 import { Component } from "@angular/core";
-import { Fact } from "./fact.model";
 import { FactsServiceService } from "./facts-service.service";
 
 @Component({
@@ -11,8 +9,16 @@ import { FactsServiceService } from "./facts-service.service";
 export class AppComponent {
   title = "cats-app";
 
-  constructor(public factService: FactsServiceService) {}
+  constructor(public factsService: FactsServiceService) {
+    factsService.onFetchFacts();
+  }
 
-  ngOnInit() {
+  ngOnInit() {}
+
+  itemClicked(itemId) {
+    this.factsService.singleClickHandler(itemId);
+  }
+  sendToServer() {
+    this.factsService.sendToServer();
   }
 }

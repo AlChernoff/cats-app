@@ -6,7 +6,7 @@ export class Fact {
   public date: Date;
   public rating: string;
 
-  constructor(id:number,text: string, date: Date,) {
+  constructor(text: string, date: Date,  id:number) {
     this.id = id;
     this.text = text;
     this.date = date;
